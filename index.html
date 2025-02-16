@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Flashlight</title>
+
+    <!-- Recommended meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <!-- PyScript CSS -->
+    <link rel="stylesheet" href="./styles/styles.css" />
+
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.11.1/core.css">
+
+    <script type="module" src="https://pyscript.net/releases/2024.11.1/core.js"></script>
+ <style>
+        canvas {
+            display: block;
+            margin: 0 auto;
+            background-color: black;
+            color:#ffffff
+        }
+        #canvasContainer {
+            position: relative;
+            width: 800px;
+            height: 600px;
+        }
+        #myButton {
+            position: absolute;
+            top: 10%;
+            left: 30%;
+            transform: translate(-50%, -50%);
+            padding: 10px 30px;
+            background-color:#50100A;
+        }
+         #myButton1 {
+            position: absolute;
+            top: 10%;
+            left: 40%;
+            transform: translate(-50%, -50%);
+            padding: 10px 30px;
+            background-color:#073B3A;
+        }
+          #myButton2 {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px 30px;
+            background-color:#073B3A;
+        }
+         #inpButton {
+            position: absolute;
+            top: 42%;
+            left: 60%;
+            transform: translate(-50%, -50%);
+            padding: 10px 10px;
+            background-color:#50100A;
+            border: none;
+        }
+         #input1 {
+           position: absolute;
+           top: 30%;
+           left: 60%;
+           transform: translate(-50%, -50%);
+           padding: 10px 10px;
+           background-color:#50100A;
+           border: none;  
+         }
+         #input2 {
+           position: absolute;
+           top: 36%;
+           left: 60%;
+           transform: translate(-50%, -50%);
+           padding: 10px 10px;
+           background-color:#50100A;
+           border: none;  
+         }
+    </style>
+</head>
+<body>
+	<div id="canvasContainer">
+        <canvas id="myCanvas" width="1600" height="1000">ddd</canvas>
+        <button id="myButton"></button>
+        <button id="myButton1"></button>
+        <button id="myButton2"></button>
+    </div>
+    <script type="py" config="./pyscript.toml">
+from pyscript import when,document
+from pyscript import display 
+from js import document
+canvas = document.getElementById("myCanvas")
+context = canvas.getContext("2d")
+context.clearRect(0, 0, canvas.width, canvas.height)
+context.beginPath()
+context.moveTo(20, 20)
+context.lineTo(20, 100)        
+context.lineTo(1580, 100) 
+context.lineTo(1580, 20) 
+context.lineTo(20, 20)                 
+context.strokeStyle = "grey"
+context.stroke()        
+@when("click", "#myButton")
+def fun(event):
+    from js import document
+    from pyscript import display,HTML,when
+    # Get the canvas and context
+    canvas = document.getElementById("myCanvas")
+    context = canvas.getContext("2d")
+    context.clearRect(0, 0, canvas.width, canvas.height)
+    context.stroke()
+
+    context.font = "30px Arial"
+    context.fillStyle = "WHITE"
+    display(HTML("""
+        <input type="text" id="input1" placeholder="Enter first input">
+        <input type="text" id="input2" placeholder="Enter second input">
+        <button id="inpButton">Submit</button>"""))
+    @when("click", "#inpButton")
+    def on_canvas_click():
+            context.clearRect(0, 0, canvas.width, canvas.height)
+            context.stroke()
+            input1 = document.getElementById('input1').value
+            input2 = document.getElementById('input2').value
+            #context.clearRect(0, 0, canvas.width, canvas.height)
+            context.font = "15px Arial"
+            context.fillStyle = "WHITE"
+            context.fillText("first number  "+input1, 862, 380)
+            #context.clearRect(0, 0, canvas.width, canvas.height)
+            context.fillText("Second number  "+input2, 862, 400)
+            #context.clearRect(0, 0, canvas.width, canvas.height)
+            context.fillText("Answer  " +str(int(input1)+int(input2)),862,430)
+    canvas.addEventListener("click", on_canvas_click)
+
+    
+@when("click", "#myButton1")
+def fun(event):
+    from js import document
+    # Get the canvas and context
+    canvas = document.getElementById("myCanvas")
+    context = canvas.getContext("2d")
+    context.clearRect(0, 0, canvas.width, canvas.height)
+
+
+    # Set font and color
+    context.font = "30px Arial"
+    context.fillStyle = "WHITE"
+    import pandas as pd
+
+    data = {'col1': [1, 2], 'col2': [3, 4]}
+    df = pd.DataFrame(data)
+    x = "jsn sdjhjhd jdshjshdj gggggggggghhhhhhghhghhhgghjjjjjjjjjjjjjjjjjjjjjjjjjgfhjhvgggghhhbvgghhhhjj"
+    # Draw text on the canvas
+    context.fillText(x, 200, 300)
+    #q = document.querySelector("#item")
+    #q.innerText = "winner"    
+    </script>
+     <script src="./main.js">
+
+    </script>
+</body>
+</html>
