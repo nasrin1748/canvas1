@@ -14,67 +14,79 @@
 
     <script type="module" src="https://pyscript.net/releases/2024.11.1/core.js"></script>
  <style>
-        .canvas-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width="955";
-            height:"1000";
-            background-color: #f0f0f0;
-            position: relative; /* To position buttons absolutely within the container */
+       #canvascontainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Optional: Set the container height to the viewport height */
+        background-color: #f0f0f0; /* Optional: Set a background color */
         }
         canvas {
             display: block;
+            margin: 0 auto;
             background-color: black;
-            color: #ffffff;
-        }
-        .button-container {
-            position: absolute;
-            display: flex;
-            flex-direction: column;
-            top: 12%;
-            left: 0.06%;
-            gap: 10px;
-        }
-        button {
-            padding: 10px 50px;
-            border: none;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
+            color:#ffffff;
         }
         #myButton {
-            background-color: #50100A;
+            position: absolute;
+            top: 20%;
+            left: 28.5%;
+            transform: translate(-50%, -50%);
+            padding: 10px 50px;
+            background-color:#50100A;
         }
-        #myButton1 {
-            background-color: #073B3A;
+         #myButton1 {
+            position: absolute;
+            top: 25%;
+            left: 28.5%;
+            transform: translate(-50%, -50%);
+            padding: 10px 50px;
+            background-color:#073B3A;
         }
         #myButton2 {
-            background-color: #ffff00;
-            color: black;
+            position: absolute;
+            top: 30%;
+            left: 28.5%;
+            transform: translate(-50%, -50%);
+            padding: 10px 50px;
+            background-color:#Ffff00;
         }
-        /* Responsive Design */
-        @media (max-width: 600px) {
-            button {
-                padding: 10px 20px;
-                font-size: 14px;
-            }
-            canvas {
-                width: 100%;
-                height: auto;
-            }
+        #inpButton {
+            position: absolute;
+            top: 42%;
+            left: 60%;
+            transform: translate(-50%, -50%);
+            padding: 10px 10px;
+            background-color:#50100A;
+            border: none;
         }
+         #input1 {
+           position: absolute;
+           top: 30%;
+           left: 60%;
+           transform: translate(-50%, -50%);
+           padding: 10px 10px;
+           background-color:#50100A;
+           border: none;  
+         }
+         #input2 {
+           position: absolute;
+           top: 36%;
+           left: 60%;
+           transform: translate(-50%, -50%);
+           padding: 10px 10px;
+           background-color:#50100A;
+           border: none;  
+         }
     </style>
 </head>
 <body>
     
-   <div class="canvas-container">
-        <canvas id="myCanvas" width="955" height="1000"></canvas>
-        <div class="button-container">
-            <button id="myButton">Addition Example</button>
-            <button id="myButton1"></button>
-            <button id="myButton2"></button>
-        </div>
+    <div id="canvasContainer">
+        <canvas id="myCanvas" width=955px height=1000px></canvas>
+        <button id="myButton">Addition Example</button>
+        <button id="myButton1"></button>
+        <button id="myButton2"></button>
     </div>
     <script type="py" config="./pyscript.toml">
 from pyscript import when,document
