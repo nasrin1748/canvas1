@@ -14,42 +14,44 @@
 
     <script type="module" src="https://pyscript.net/releases/2024.11.1/core.js"></script>
  <style>
+       #canvascontainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Optional: Set the container height to the viewport height */
+        background-color: #f0f0f0; /* Optional: Set a background color */
+        }
         canvas {
             display: block;
             margin: 0 auto;
             background-color: black;
-            color:#ffffff
-        }
-        #canvasContainer {
-            position: relative;
-            width: 800px;
-            height: 600px;
+            color:#ffffff;
         }
         #myButton {
             position: absolute;
-            top: 10%;
-            left: 30%;
+            top: 20%;
+            left: 28.5%;
             transform: translate(-50%, -50%);
-            padding: 10px 30px;
+            padding: 10px 50px;
             background-color:#50100A;
         }
          #myButton1 {
             position: absolute;
-            top: 10%;
-            left: 40%;
+            top: 25%;
+            left: 28.5%;
             transform: translate(-50%, -50%);
-            padding: 10px 30px;
+            padding: 10px 50px;
             background-color:#073B3A;
         }
-          #myButton2 {
+        #myButton2 {
             position: absolute;
-            top: 10%;
-            left: 50%;
+            top: 30%;
+            left: 28.5%;
             transform: translate(-50%, -50%);
-            padding: 10px 30px;
-            background-color:#073B3A;
+            padding: 10px 50px;
+            background-color:#Ffff00;
         }
-         #inpButton {
+        #inpButton {
             position: absolute;
             top: 42%;
             left: 60%;
@@ -79,27 +81,31 @@
     </style>
 </head>
 <body>
-	<div id="canvasContainer">
-        <canvas id="myCanvas" width="1600" height="1000">ddd</canvas>
-        <button id="myButton"></button>
+    
+    <div id="canvasContainer">
+        <canvas id="myCanvas" width=955px height=1000px></canvas>
+        <button id="myButton">Addition Example</button>
         <button id="myButton1"></button>
         <button id="myButton2"></button>
     </div>
     <script type="py" config="./pyscript.toml">
 from pyscript import when,document
-from pyscript import display 
+from pyscript import display
 from js import document
 canvas = document.getElementById("myCanvas")
 context = canvas.getContext("2d")
-context.clearRect(0, 0, canvas.width, canvas.height)
 context.beginPath()
 context.moveTo(20, 20)
 context.lineTo(20, 100)        
-context.lineTo(1580, 100) 
-context.lineTo(1580, 20) 
+context.lineTo(940, 100) 
+context.lineTo(940, 20) 
 context.lineTo(20, 20)                 
+context.moveTo(20, 20)   
+context.lineTo(20, 970)
+context.lineTo(250, 970) 
+context.lineTo(250, 100)                        
 context.strokeStyle = "grey"
-context.stroke()        
+context.stroke()         
 @when("click", "#myButton")
 def fun(event):
     from js import document
@@ -140,6 +146,7 @@ def fun(event):
     canvas = document.getElementById("myCanvas")
     context = canvas.getContext("2d")
     context.clearRect(0, 0, canvas.width, canvas.height)
+    context.stroke()
 
 
     # Set font and color
@@ -149,11 +156,12 @@ def fun(event):
 
     data = {'col1': [1, 2], 'col2': [3, 4]}
     df = pd.DataFrame(data)
-    x = "jsn sdjhjhd jdshjshdj gggggggggghhhhhhghhghhhgghjjjjjjjjjjjjjjjjjjjjjjjjjgfhjhvgggghhhbvgghhhhjj"
+    x = "jsn sdjhjhd jdshjshdj sjhdjsh djshjhd sjdhjsh sjdhjhjhsjdh"
     # Draw text on the canvas
-    context.fillText(x, 200, 300)
+    context.fillText(x, 600, 300)
     #q = document.querySelector("#item")
-    #q.innerText = "winner"    
+    #q.innerText = "winner"
+    
     </script>
      <script src="./main.js">
 
