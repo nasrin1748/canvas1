@@ -52,8 +52,8 @@
         }
         #inpButton {
             position: absolute;
-            top: 35%;
-            left: 60%;
+            top: 60%;
+            left: 40%;
             transform: translate(-50%, -50%);
             padding: 10px 10px;
             background-color:#50100A;
@@ -61,8 +61,8 @@
         }
          #input1 {
            position: absolute;
-           top: 25%;
-           left: 60%;
+           top: 40%;
+           left: 40%;
            transform: translate(-50%, -50%);
            padding: 10px 10px;
            background-color:#50100A;
@@ -70,8 +70,8 @@
          }
          #input2 {
            position: absolute;
-           top: 30%;
-           left: 60%;
+           top: 48%;
+           left: 40%;
            transform: translate(-50%, -50%);
            padding: 10px 10px;
            background-color:#50100A;
@@ -129,11 +129,11 @@ def fun(event):
             #context.clearRect(0, 0, canvas.width, canvas.height)
             context.font = "15px Arial"
             context.fillStyle = "WHITE"
-            context.fillText("first number  "+input1, 862, 380)
+            context.fillText("first number  "+input1, 400, 380)
             #context.clearRect(0, 0, canvas.width, canvas.height)
-            context.fillText("Second number  "+input2, 862, 400)
+            context.fillText("Second number  "+input2, 400, 400)
             #context.clearRect(0, 0, canvas.width, canvas.height)
-            context.fillText("Answer  " +str(int(input1)+int(input2)),862,430)
+            context.fillText("Answer  " +str(int(input1)+int(input2)),400,430)
     canvas.addEventListener("click", on_canvas_click)
 
 
