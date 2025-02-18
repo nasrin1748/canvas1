@@ -1,1 +1,3 @@
-packages = ["pandas"]
+packages = [ "pandas", "Jinja2","html2text","numpy","beautifulsoup4", "lxml","matplotlib"]
+[files]
+"main.py" = "main.py"
