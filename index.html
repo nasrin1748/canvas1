@@ -7,18 +7,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <!-- PyScript CSS -->
-    <link rel="stylesheet" href="./styles/styles.css" />
-
     <link rel="stylesheet" href="https://pyscript.net/releases/2024.11.1/core.css">
 
     <script type="module" src="https://pyscript.net/releases/2024.11.1/core.js"></script>
  <style>
+         
          #canvas-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
             background-color: #f0f0f0;
             position: relative; /* To position buttons absolutely within the container */
         }
@@ -26,10 +23,9 @@
             display: block;
             background-color: black;
             color: #ffffff;
-            width=600px;
-            height=900px;
             
         }
+         
         .button-container {
             position: absolute;
             display: flex;
@@ -56,14 +52,14 @@
             color: black;
         }
         /* Responsive Design */
-        @media (max-width: 600px) {
+        @media (max-width: 900px) {
             button {
                 padding: 6px 18px;
                 font-size: 14px;
             }
             canvas {
-                width: 100%;
-                height: auto;
+                width: 600px;
+                height: 900px;
             }
         }
         #inpButton {
