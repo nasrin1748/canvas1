@@ -7,12 +7,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
+
     <!-- PyScript CSS -->
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="https://pyscript.net/releases/2025.2.1/core.css">
 
-    <link rel="stylesheet" href="https://pyscript.net/releases/2024.11.1/core.css">
+    <!-- This script tag bootstraps PyScript -->
+    <script type="module" src="https://pyscript.net/releases/2025.2.1/core.js"></script>
 
-    <script type="module" src="https://pyscript.net/releases/2024.11.1/core.js"></script>
  <style>
         canvas {
             display: block;
@@ -27,24 +28,24 @@
         }
         #myButton {
             position: absolute;
-            top: 25%;
-            left: 30%;
+            top: 15%;
+            left: 13%;
             transform: translate(-50%, -50%);
             padding: 10px 50px;
             background-color:#50100A;
         }
          #myButton1 {
             position: absolute;
-            top: 35%;
-            left: 30%;
+            top: 20%;
+            left: 13%;
             transform: translate(-50%, -50%);
             padding: 10px 50px;
             background-color:#073B3A;
         }
         #myButton2 {
             position: absolute;
-            top: 45%;
-            left: 30%;
+            top: 25%;
+            left: 13%;
             transform: translate(-50%, -50%);
             padding: 10px 50px;
             background-color:#Ffff00;
@@ -65,7 +66,7 @@
            transform: translate(-50%, -50%);
            padding: 10px 10px;
            background-color:#50100A;
-           border: none;  
+           border: none;
          }
          #input2 {
            position: absolute;
@@ -74,7 +75,7 @@
            transform: translate(-50%, -50%);
            padding: 10px 10px;
            background-color:#50100A;
-           border: none;  
+           border: none;
          }
     </style>
 </head>
@@ -93,16 +94,16 @@ canvas = document.getElementById("myCanvas")
 context = canvas.getContext("2d")
 context.beginPath()
 context.moveTo(20, 20)
-context.lineTo(20, 100)        
-context.lineTo(1100, 100) 
-context.lineTo(1100, 20) 
-context.lineTo(20, 20)                 
-context.moveTo(20, 20)   
+context.lineTo(20, 100)
+context.lineTo(1100, 100)
+context.lineTo(1100, 20)
+context.lineTo(20, 20)
+context.moveTo(20, 20)
 context.lineTo(20, 1000)
-context.lineTo(300, 1000) 
-context.lineTo(300, 100)                        
+context.lineTo(300, 1000)
+context.lineTo(300, 100)
 context.strokeStyle = "grey"
-context.stroke()         
+context.stroke()
 @when("click", "#myButton")
 def fun(event):
     from js import document
@@ -135,7 +136,7 @@ def fun(event):
             context.fillText("Answer  " +str(int(input1)+int(input2)),862,430)
     canvas.addEventListener("click", on_canvas_click)
 
-    
+
 @when("click", "#myButton1")
 def fun(event):
     from js import document
@@ -158,7 +159,7 @@ def fun(event):
     context.fillText(x, 600, 300)
     #q = document.querySelector("#item")
     #q.innerText = "winner"
-    
+
     </script>
      <script src="./main.js">
 
