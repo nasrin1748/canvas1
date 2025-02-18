@@ -7,60 +7,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
+    <!-- PyScript CSS -->
+    <link rel="stylesheet" href="./styles.css" />
+
     <link rel="stylesheet" href="https://pyscript.net/releases/2024.11.1/core.css">
 
     <script type="module" src="https://pyscript.net/releases/2024.11.1/core.js"></script>
  <style>
-         
-         #canvas-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #f0f0f0;
-            position: relative; /* To position buttons absolutely within the container */
-        }
         canvas {
             display: block;
+            margin: 0 auto;
             background-color: black;
-            color: #ffffff;
-            
+            color:#ffffff
         }
-         
-        .button-container {
-            position: absolute;
-            display: flex;
-            flex-direction: column;
-            top: 50%;
-            left: 6.5%;
-            gap: 10px;
-        }
-        button {
-            padding: 10px 50px;
-            border: none;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
+        #canvasContainer {
+            position: relative;
+            width: 1600px;
+            height: 1500px;
         }
         #myButton {
-            background-color: #50100A;
+            position: absolute;
+            top: 25%;
+            left: 30%;
+            transform: translate(-50%, -50%);
+            padding: 10px 50px;
+            background-color:#50100A;
         }
-        #myButton1 {
-            background-color: #073B3A;
+         #myButton1 {
+            position: absolute;
+            top: 35%;
+            left: 30%;
+            transform: translate(-50%, -50%);
+            padding: 10px 50px;
+            background-color:#073B3A;
         }
         #myButton2 {
-            background-color: #ffff00;
-            color: black;
-        }
-        /* Responsive Design */
-        @media (max-width: 900px) {
-            button {
-                padding: 6px 18px;
-                font-size: 14px;
-            }
-            canvas {
-                width: 600px;
-                height: 900px;
-            }
+            position: absolute;
+            top: 45%;
+            left: 30%;
+            transform: translate(-50%, -50%);
+            padding: 10px 50px;
+            background-color:#Ffff00;
         }
         #inpButton {
             position: absolute;
@@ -92,13 +79,11 @@
     </style>
 </head>
 <body>
-    <div id="canvasContainer">
-        <canvas id="myCanvas"></canvas>
-         <div class="button-container">
+	<div id="canvasContainer">
+        <canvas id="myCanvas" width="1600" height="1500">ddd</canvas>
         <button id="myButton">Addition Example</button>
         <button id="myButton1"></button>
         <button id="myButton2"></button>
-         </div>     
     </div>
     <script type="py" config="./pyscript.toml">
 from pyscript import when,document
@@ -109,12 +94,12 @@ context = canvas.getContext("2d")
 context.beginPath()
 context.moveTo(20, 20)
 context.lineTo(20, 100)        
-context.lineTo(960, 100) 
-context.lineTo(960, 20) 
+context.lineTo(1580, 100) 
+context.lineTo(1580, 20) 
 context.lineTo(20, 20)                 
 context.moveTo(20, 20)   
-context.lineTo(20, 1460)
-context.lineTo(300, 1460) 
+context.lineTo(20, 970)
+context.lineTo(300, 970) 
 context.lineTo(300, 100)                        
 context.strokeStyle = "grey"
 context.stroke()         
@@ -123,8 +108,8 @@ def fun(event):
     from js import document
     from pyscript import display,HTML,when
     # Get the canvas and context
-    #canvas = document.getElementById("myCanvas")
-    #context = canvas.getContext("2d")
+    canvas = document.getElementById("myCanvas")
+    context = canvas.getContext("2d")
     context.clearRect(0, 0, canvas.width, canvas.height)
     context.stroke()
 
